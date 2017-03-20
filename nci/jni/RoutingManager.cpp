@@ -216,7 +216,7 @@ void RoutingManager::enableRoutingToHost()
                 ALOGE ("Fail to set default tech routing for Nfc-A/Nfc-F");
         }
         // Default routing for IsoDep and T3T protocol
-        protoMask = (NFA_PROTOCOL_MASK_ISO_DEP | NFA_PROTOCOL_MASK_T3T);
+        protoMask = (NFA_PROTOCOL_MASK_ISO_DEP);
         nfaStat = NFA_EeSetDefaultProtoRouting(mDefaultEe, protoMask, 0, 0);
         if (nfaStat == NFA_STATUS_OK)
             mRoutingEvent.wait ();
